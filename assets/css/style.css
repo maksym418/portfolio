@@ -215,7 +215,7 @@ h6 {
   position: relative;
 }
 
-.navbar li+li {
+.navbar li + li {
   margin-left: 30px;
 }
 
@@ -254,7 +254,7 @@ h6 {
 }
 
 .navbar a:hover:before,
-.navbar li:hover>a:before,
+.navbar li:hover > a:before,
 .navbar .active:before {
   visibility: visible;
   width: 25px;
@@ -263,7 +263,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   color: #fff;
 }
 
@@ -328,7 +328,7 @@ h6 {
   padding: 12px 20px;
 }
 
-.navbar-mobile li+li {
+.navbar-mobile li + li {
   margin: 0;
 }
 
@@ -694,79 +694,67 @@ section .container {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
+  width: 100%;
   text-align: center;
   background: rgba(204, 204, 204, 0.1);
-  padding: 80px 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
   transition: all ease-in-out 0.3s;
+  position: relative;
 }
 
-.services .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #18d26e;
-  border-radius: 5px;
-  transition: all 0.3s ease-out 0s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transform-style: preserve-3d;
-}
-
-.services .icon-box .icon i {
-  color: #fff;
-  font-size: 28px;
-}
-
-.services .icon-box .icon::before {
+.services .icon-box .overlay {
   position: absolute;
-  content: "";
-  left: -8px;
-  top: -8px;
-  height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 5px;
-  transition: all 0.3s ease-out 0s;
-  transform: translateZ(-1px);
+  height: 100%;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(22, 22, 22, 1)
+  );
+  transition: all ease-in-out 0.5s;
 }
 
-.services .icon-box h4 {
+.services .icon-box .overlay:hover {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 99%,
+    rgba(22, 22, 22, 1)
+  );
+}
+
+.services .icon-box img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: all ease-in-out 0.5s;
+}
+
+.services .icon-box:hover img {
+  filter: none;
+}
+.services .icon-box h5 {
+  display: none;
+  max-width: 100%;
+  padding-top: 10px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
-  color: #fff;
-}
-
-.services .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+.services .icon-box h5 a {
+  color: #ccc;
 }
 
 .services .icon-box:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: rgba(100, 100, 100, 0.1);
+  border-color: white;
 }
 
-.services .icon-box:hover .icon {
-  background: #fff;
-}
-
-.services .icon-box:hover .icon i {
-  color: #18d26e;
-}
-
-.services .icon-box:hover .icon::before {
-  background: #35e888;
-}
-
-.services .icon-box:hover h4 a,
-.services .icon-box:hover p {
+.services .icon-box:hover h5 a {
   color: #fff;
 }
 
@@ -969,7 +957,7 @@ section .container {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1066,7 +1054,7 @@ section .container {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1134,7 +1122,7 @@ section .container {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #18d26e;
   border: 0;
   padding: 10px 30px;
@@ -1143,7 +1131,7 @@ section .container {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #15bb62;
 }
 
@@ -1188,7 +1176,6 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
-
 
 #particles {
   position: absolute;
