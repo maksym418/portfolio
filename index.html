@@ -721,7 +721,9 @@
     var audio = document.getElementById("backgroundMusic");
 
     audio.onloadeddata =function(){
-      audio.play().then(()=>{console.log("load")}).catch((err)=>{audio.load()})
+      audio.play().then(()=>{
+        audio.volumn = 0.1;
+      }).catch((err)=>{audio.load()})
     }
 
     const portfolioItems = [
