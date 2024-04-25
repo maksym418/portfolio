@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #040404;
+  background-color: #000;
   color: #fff;
   position: relative;
   background: transparent;
@@ -20,7 +20,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #000 url("../img/bg.webp") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
